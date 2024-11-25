@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -24,21 +25,35 @@ public final class ActivityCreateAccountBinding implements ViewBinding {
   public final Button createAccountButton;
 
   @NonNull
+  public final EditText firstNameText;
+
+  @NonNull
+  public final EditText lastNameText;
+
+  @NonNull
   public final ConstraintLayout main;
 
   @NonNull
   public final EditText passwordEditText;
 
   @NonNull
+  public final TextView signupTextView;
+
+  @NonNull
   public final EditText usernameEditText;
 
   private ActivityCreateAccountBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button createAccountButton, @NonNull ConstraintLayout main,
-      @NonNull EditText passwordEditText, @NonNull EditText usernameEditText) {
+      @NonNull Button createAccountButton, @NonNull EditText firstNameText,
+      @NonNull EditText lastNameText, @NonNull ConstraintLayout main,
+      @NonNull EditText passwordEditText, @NonNull TextView signupTextView,
+      @NonNull EditText usernameEditText) {
     this.rootView = rootView;
     this.createAccountButton = createAccountButton;
+    this.firstNameText = firstNameText;
+    this.lastNameText = lastNameText;
     this.main = main;
     this.passwordEditText = passwordEditText;
+    this.signupTextView = signupTextView;
     this.usernameEditText = usernameEditText;
   }
 
@@ -75,11 +90,29 @@ public final class ActivityCreateAccountBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.firstNameText;
+      EditText firstNameText = ViewBindings.findChildViewById(rootView, id);
+      if (firstNameText == null) {
+        break missingId;
+      }
+
+      id = R.id.lastNameText;
+      EditText lastNameText = ViewBindings.findChildViewById(rootView, id);
+      if (lastNameText == null) {
+        break missingId;
+      }
+
       ConstraintLayout main = (ConstraintLayout) rootView;
 
       id = R.id.passwordEditText;
       EditText passwordEditText = ViewBindings.findChildViewById(rootView, id);
       if (passwordEditText == null) {
+        break missingId;
+      }
+
+      id = R.id.signupTextView;
+      TextView signupTextView = ViewBindings.findChildViewById(rootView, id);
+      if (signupTextView == null) {
         break missingId;
       }
 
@@ -90,7 +123,7 @@ public final class ActivityCreateAccountBinding implements ViewBinding {
       }
 
       return new ActivityCreateAccountBinding((ConstraintLayout) rootView, createAccountButton,
-          main, passwordEditText, usernameEditText);
+          firstNameText, lastNameText, main, passwordEditText, signupTextView, usernameEditText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

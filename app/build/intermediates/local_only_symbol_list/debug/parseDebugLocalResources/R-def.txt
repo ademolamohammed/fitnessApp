@@ -19,6 +19,8 @@ drawable ic_workout_black_24dp
 id activity
 id container
 id createAccountButton
+id firstNameText
+id lastNameText
 id loginButton
 id main
 id mobile_navigation
@@ -30,13 +32,14 @@ id navigation_home
 id navigation_workout
 id password
 id passwordEditText
+id signupTextView
 id steps
 id text_dashboard
-id text_home
 id text_notifications
 id tv_stepsTaken
 id username
 id usernameEditText
+id welcomeText
 layout activity_auth
 layout activity_create_account
 layout activity_main

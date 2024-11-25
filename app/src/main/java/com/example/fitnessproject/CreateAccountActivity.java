@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
-    EditText usernameEditText, passwordEditText;
+    EditText usernameEditText, passwordEditText,firstNameText,lastNameText;
     Button createAccountButton;
 
     @Override
@@ -32,6 +32,8 @@ public class CreateAccountActivity extends AppCompatActivity {
         });
 
         usernameEditText = findViewById(R.id.usernameEditText);
+        firstNameText = findViewById(R.id.firstNameText);
+        lastNameText = findViewById(R.id.lastNameText);
         passwordEditText = findViewById(R.id.passwordEditText);
         createAccountButton = findViewById(R.id.createAccountButton);
 
@@ -39,6 +41,8 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String username = usernameEditText.getText().toString();
+                String firstName = firstNameText.getText().toString();
+                String lastName = lastNameText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
                 if (!username.isEmpty() && !password.isEmpty()) {
@@ -46,6 +50,8 @@ public class CreateAccountActivity extends AppCompatActivity {
                     SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("username", username);
+                    editor.putString("firstName", firstName);
+                    editor.putString("lastName", lastName);
                     editor.putString("password", password);
                     editor.apply();
 
