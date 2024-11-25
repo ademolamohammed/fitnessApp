@@ -49,29 +49,38 @@ public class LoginActivity extends AppCompatActivity {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-
-                // Check if the user exists in SharedPreferences
                 SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-                String storedUsername = sharedPreferences.getString(KEY_USERNAME, null);
-                String storedPassword = sharedPreferences.getString(KEY_PASSWORD, null);
-                if (username.equals(storedUsername) && password.equals(storedPassword)) {
-                    // Login successful, go to the second screen
+                String storedPassword = sharedPreferences.getString(username + "_password", null);
+
+                if (password.equals(storedPassword)) {
+                    // Save the current user's username for use in other parts of the app
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("current_user", username);
+                    editor.apply();
+
+                    // Login successful, go to the main screen
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
-                    // Login failed, show a toast message
-//                    Toast.makeText(AuthActivity.this, storedUsername, Toast.LENGTH_SHORT).show();
                     Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to the CreateAccountActivity to create an account
-                Intent intent = new Intent(LoginActivity.this, CreateAccountActivity.class);
-                startActivity(intent);
+                String username = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+                if (!username.isEmpty() && !password.isEmpty()) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(username + "_password", password);
+                    editor.apply();
+                    Toast.makeText(LoginActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Please enter a valid username and password", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

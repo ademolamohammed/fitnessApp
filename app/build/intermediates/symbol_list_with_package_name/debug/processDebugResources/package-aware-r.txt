@@ -3254,6 +3254,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnReset
+id btnSave
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3365,6 +3367,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id guideline
 id header_title
 id hide_ime_id
 id hideable
@@ -3378,6 +3381,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3656,6 +3660,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvLastSaved
 id tv_stepsTaken
 id unchecked
 id uniform

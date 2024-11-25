@@ -4,10 +4,13 @@ package com.example.fitnessproject.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.fitnessproject.R;
@@ -23,16 +26,38 @@ public final class FragmentActivityBinding implements ViewBinding {
   public final TextView activity;
 
   @NonNull
+  public final Button btnReset;
+
+  @NonNull
+  public final Button btnSave;
+
+  @NonNull
+  public final Guideline guideline;
+
+  @NonNull
+  public final ImageView imageView;
+
+  @NonNull
   public final TextView steps;
+
+  @NonNull
+  public final TextView tvLastSaved;
 
   @NonNull
   public final TextView tvStepsTaken;
 
   private FragmentActivityBinding(@NonNull ConstraintLayout rootView, @NonNull TextView activity,
-      @NonNull TextView steps, @NonNull TextView tvStepsTaken) {
+      @NonNull Button btnReset, @NonNull Button btnSave, @NonNull Guideline guideline,
+      @NonNull ImageView imageView, @NonNull TextView steps, @NonNull TextView tvLastSaved,
+      @NonNull TextView tvStepsTaken) {
     this.rootView = rootView;
     this.activity = activity;
+    this.btnReset = btnReset;
+    this.btnSave = btnSave;
+    this.guideline = guideline;
+    this.imageView = imageView;
     this.steps = steps;
+    this.tvLastSaved = tvLastSaved;
     this.tvStepsTaken = tvStepsTaken;
   }
 
@@ -69,9 +94,39 @@ public final class FragmentActivityBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnReset;
+      Button btnReset = ViewBindings.findChildViewById(rootView, id);
+      if (btnReset == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSave;
+      Button btnSave = ViewBindings.findChildViewById(rootView, id);
+      if (btnSave == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline;
+      Guideline guideline = ViewBindings.findChildViewById(rootView, id);
+      if (guideline == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       id = R.id.steps;
       TextView steps = ViewBindings.findChildViewById(rootView, id);
       if (steps == null) {
+        break missingId;
+      }
+
+      id = R.id.tvLastSaved;
+      TextView tvLastSaved = ViewBindings.findChildViewById(rootView, id);
+      if (tvLastSaved == null) {
         break missingId;
       }
 
@@ -81,8 +136,8 @@ public final class FragmentActivityBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentActivityBinding((ConstraintLayout) rootView, activity, steps,
-          tvStepsTaken);
+      return new FragmentActivityBinding((ConstraintLayout) rootView, activity, btnReset, btnSave,
+          guideline, imageView, steps, tvLastSaved, tvStepsTaken);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

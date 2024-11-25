@@ -17,8 +17,12 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_workout_black_24dp
 id activity
+id btnReset
+id btnSave
 id container
 id createAccountButton
+id guideline
+id imageView
 id loginButton
 id main
 id mobile_navigation
@@ -34,6 +38,7 @@ id steps
 id text_dashboard
 id text_home
 id text_notifications
+id tvLastSaved
 id tv_stepsTaken
 id username
 id usernameEditText

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.fitnessproject.R;
 import com.example.fitnessproject.databinding.FragmentActivityBinding;
 import com.example.fitnessproject.ui.calories.CaloriesViewModel;
 
@@ -27,11 +29,19 @@ public class ActivityFragment extends Fragment implements SensorEventListener {
     private boolean running = false;
     private float totalSteps = 0f;
     private float previousTotalSteps = 0f;
+    Button btnSave;
+    Button btnReset;
+    TextView tvLastSaved;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         binding = FragmentActivityBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        btnReset = root.findViewById(R.id.btnReset);
+        btnSave = root.findViewById(R.id.btnSave);
+        tvLastSaved = root.findViewById(R.id.tvLastSaved);
+
 
         loadData();
         resetSteps();
@@ -39,6 +49,8 @@ public class ActivityFragment extends Fragment implements SensorEventListener {
         sensorManager = (SensorManager) requireActivity().getSystemService(Context.SENSOR_SERVICE);
 
         return root;
+
+
     }
 
     @Override
@@ -69,15 +81,27 @@ public class ActivityFragment extends Fragment implements SensorEventListener {
         }
     }
 
+    private String getUserKey(String baseKey) {
+        String currentUser = getCurrentUser();
+        if (currentUser != null) {
+            return baseKey + "_" + currentUser;
+        } else {
+            throw new IllegalStateException("No user is currently logged in");
+        }
+    }
+
     public void resetSteps() {
-        binding.tvStepsTaken.setOnClickListener(new View.OnClickListener() {
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view)
+            {
                 Toast.makeText(getContext(), "Long tap to reset steps", Toast.LENGTH_SHORT).show();
+
             }
         });
 
-        binding.tvStepsTaken.setOnLongClickListener(new View.OnLongClickListener() {
+        btnReset.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 previousTotalSteps = totalSteps;
@@ -86,18 +110,46 @@ public class ActivityFragment extends Fragment implements SensorEventListener {
                 return true;
             }
         });
+
+
     }
 
+    private String getCurrentUser() {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("current_user", null);
+    }
+
+
+
     private void saveData() {
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putFloat("key1", previousTotalSteps);
-        editor.apply();
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                previousTotalSteps = totalSteps - (totalSteps - previousTotalSteps);
+
+                SharedPreferences sharedPreferences = requireContext().getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putFloat(getUserKey("key_steps"), previousTotalSteps);
+                editor.putLong(getUserKey("key_time"), System.currentTimeMillis());
+                editor.apply();
+
+                Toast.makeText(getContext(), "Steps and time saved", Toast.LENGTH_SHORT).show();
+                loadData();
+            }
+        });
     }
 
     private void loadData() {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        previousTotalSteps = sharedPreferences.getFloat("key1", 0f);
+        previousTotalSteps = sharedPreferences.getFloat(getUserKey("key_steps"), 0f);
+        long savedTime = sharedPreferences.getLong(getUserKey("key_time"), 0L);
+
+        if (savedTime != 0L) {
+            String formattedTime = android.text.format.DateFormat.format("yyyy-MM-dd HH:mm:ss", new java.util.Date(savedTime)).toString();
+            binding.tvLastSaved.setText("Last saved: " + formattedTime + ", Steps: " + previousTotalSteps);
+        } else {
+            binding.tvLastSaved.setText("No saved data available");
+        }
     }
 
     @Override
