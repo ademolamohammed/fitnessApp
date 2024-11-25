@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_workout"
-        android:name="com.example.fitnessproject.ui.workout.WorkoutFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_workout" />
+        android:id="@+id/navigation_sleep"
+        android:name="com.example.fitnessproject.ui.sleep.SleepFragment"
+        android:label="@string/title_sleep"
+        tools:layout="@layout/fragment_sleep" />
 
     <fragment
         android:id="@+id/navigation_calories"
