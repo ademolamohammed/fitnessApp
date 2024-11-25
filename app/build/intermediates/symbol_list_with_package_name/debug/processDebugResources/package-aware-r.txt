@@ -3077,6 +3077,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable ic_sleep_black_24dp
 drawable ic_workout_black_24dp
 drawable indeterminate_static
 drawable m3_avd_hide_password
@@ -3477,7 +3478,7 @@ id navigation_bar_item_small_label_view
 id navigation_calories
 id navigation_header_container
 id navigation_home
-id navigation_workout
+id navigation_sleep
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3563,6 +3564,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id setSleepTimeButton
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3572,6 +3574,7 @@ id showTitle
 id sin
 id skipCollapsed
 id skipped
+id sleepTimeTextView
 id slide
 id sliding_pane_detail_container
 id sliding_pane_layout
@@ -3625,7 +3628,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id text_dashboard
 id text_home
 id text_input_end_icon
 id text_input_error_icon
@@ -3819,7 +3821,7 @@ layout design_text_input_start_icon
 layout fragment_activity
 layout fragment_calories
 layout fragment_home
-layout fragment_workout
+layout fragment_sleep
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -4059,9 +4061,9 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
 string title_activity
-string title_dashboard
 string title_home
 string title_notifications
+string title_sleep
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

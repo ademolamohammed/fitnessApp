@@ -11,9 +11,9 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="app_name">FitnessProject</string>
     <string name="title_activity">Activity</string>
-    <string name="title_dashboard">Workout</string>
     <string name="title_home">Home</string>
     <string name="title_notifications">Calories</string>
+    <string name="title_sleep">Sleep</string>
     <style name="Theme.FitnessProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

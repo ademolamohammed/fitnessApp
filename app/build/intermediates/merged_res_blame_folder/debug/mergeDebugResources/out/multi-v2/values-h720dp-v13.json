@@ -4,7 +4,7 @@
             "outputFile": "com.example.fitnessproject.app-mergeDebugResources-42:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\300387623\\.gradle\\caches\\transforms-4\\4ae050f66105e6d86a1f6de477fce83b\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\ruonn\\.gradle\\caches\\transforms-4\\4ae050f66105e6d86a1f6de477fce83b\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
