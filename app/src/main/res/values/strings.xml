@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FitnessProject</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Workout</string>
+    <string name="title_notifications">Calories</string>
+    <string name="title_activity">Activity</string>
+</resources>

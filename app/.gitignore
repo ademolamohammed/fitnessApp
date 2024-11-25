@@ -1,0 +1,37 @@
+# Android Studio specific files
+.idea/
+.gradle/
+local.properties
+*.iml
+
+# Build outputs
+/app/build/
+*/build/
+
+# Log files
+*.log
+
+# Generated files
+*.class
+*.dex
+*.apk
+*.ap_
+
+# Android Studio captures
+captures/
+
+# Misc
+*.keystore
+*.jks
+*.swp
+.DS_Store
+*.class
+
+# Other files
+*.orig
+*.hprof
+*.lock
+
+# NDK
+obj/
+jniLibs/
