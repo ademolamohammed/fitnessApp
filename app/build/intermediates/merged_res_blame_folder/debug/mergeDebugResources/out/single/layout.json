@@ -1,15 +1,31 @@
 [
     {
-        "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/activity_create_account.xml",
-        "source": "com.example.fitnessproject.app-main-46:/layout/activity_create_account.xml"
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_calories.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/fragment_calories.xml"
     },
     {
-        "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/activity_auth.xml",
-        "source": "com.example.fitnessproject.app-main-46:/layout/activity_auth.xml"
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_activity.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/fragment_activity.xml"
     },
     {
-        "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_activity.xml",
-        "source": "com.example.fitnessproject.app-main-46:/layout/fragment_activity.xml"
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_home.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/activity_main.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_sleep.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/fragment_sleep.xml"
+    },
+    {
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/activity_auth.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/activity_auth.xml"
+    },
+    {
+        "merged": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-mergeDebugResources-43:/layout/activity_create_account.xml",
+        "source": "/Users/user/.gradle/daemon/8.7/com.example.fitnessproject.app-main-46:/layout/activity_create_account.xml"
     },
     {
         "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_calories.xml",
@@ -18,13 +34,5 @@
     {
         "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_home.xml",
         "source": "com.example.fitnessproject.app-main-46:/layout/fragment_home.xml"
-    },
-    {
-        "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/activity_main.xml",
-        "source": "com.example.fitnessproject.app-main-46:/layout/activity_main.xml"
-    },
-    {
-        "merged": "com.example.fitnessproject.app-mergeDebugResources-43:/layout/fragment_sleep.xml",
-        "source": "com.example.fitnessproject.app-main-46:/layout/fragment_sleep.xml"
     }
 ]

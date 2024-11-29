@@ -4,9 +4,11 @@ package com.example.fitnessproject.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,10 +22,68 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final CardView activity;
+
+  @NonNull
+  public final ImageView activityImgView;
+
+  @NonNull
+  public final ImageView activityImgView2;
+
+  @NonNull
+  public final TextView activityText;
+
+  @NonNull
+  public final CardView calories;
+
+  @NonNull
+  public final ImageView caloriesImgView;
+
+  @NonNull
+  public final TextView caloriesValue;
+
+  @NonNull
+  public final TextView overall;
+
+  @NonNull
+  public final CardView sleep;
+
+  @NonNull
+  public final TextView sleepTime;
+
+  @NonNull
+  public final TextView stepCovered;
+
+  @NonNull
+  public final TextView textView;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
   public final TextView welcomeText;
 
-  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView welcomeText) {
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull CardView activity,
+      @NonNull ImageView activityImgView, @NonNull ImageView activityImgView2,
+      @NonNull TextView activityText, @NonNull CardView calories,
+      @NonNull ImageView caloriesImgView, @NonNull TextView caloriesValue,
+      @NonNull TextView overall, @NonNull CardView sleep, @NonNull TextView sleepTime,
+      @NonNull TextView stepCovered, @NonNull TextView textView, @NonNull TextView textView2,
+      @NonNull TextView welcomeText) {
     this.rootView = rootView;
+    this.activity = activity;
+    this.activityImgView = activityImgView;
+    this.activityImgView2 = activityImgView2;
+    this.activityText = activityText;
+    this.calories = calories;
+    this.caloriesImgView = caloriesImgView;
+    this.caloriesValue = caloriesValue;
+    this.overall = overall;
+    this.sleep = sleep;
+    this.sleepTime = sleepTime;
+    this.stepCovered = stepCovered;
+    this.textView = textView;
+    this.textView2 = textView2;
     this.welcomeText = welcomeText;
   }
 
@@ -54,13 +114,93 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.activity;
+      CardView activity = ViewBindings.findChildViewById(rootView, id);
+      if (activity == null) {
+        break missingId;
+      }
+
+      id = R.id.activityImgView;
+      ImageView activityImgView = ViewBindings.findChildViewById(rootView, id);
+      if (activityImgView == null) {
+        break missingId;
+      }
+
+      id = R.id.activityImgView2;
+      ImageView activityImgView2 = ViewBindings.findChildViewById(rootView, id);
+      if (activityImgView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.activityText;
+      TextView activityText = ViewBindings.findChildViewById(rootView, id);
+      if (activityText == null) {
+        break missingId;
+      }
+
+      id = R.id.calories;
+      CardView calories = ViewBindings.findChildViewById(rootView, id);
+      if (calories == null) {
+        break missingId;
+      }
+
+      id = R.id.caloriesImgView;
+      ImageView caloriesImgView = ViewBindings.findChildViewById(rootView, id);
+      if (caloriesImgView == null) {
+        break missingId;
+      }
+
+      id = R.id.caloriesValue;
+      TextView caloriesValue = ViewBindings.findChildViewById(rootView, id);
+      if (caloriesValue == null) {
+        break missingId;
+      }
+
+      id = R.id.overall;
+      TextView overall = ViewBindings.findChildViewById(rootView, id);
+      if (overall == null) {
+        break missingId;
+      }
+
+      id = R.id.sleep;
+      CardView sleep = ViewBindings.findChildViewById(rootView, id);
+      if (sleep == null) {
+        break missingId;
+      }
+
+      id = R.id.sleepTime;
+      TextView sleepTime = ViewBindings.findChildViewById(rootView, id);
+      if (sleepTime == null) {
+        break missingId;
+      }
+
+      id = R.id.stepCovered;
+      TextView stepCovered = ViewBindings.findChildViewById(rootView, id);
+      if (stepCovered == null) {
+        break missingId;
+      }
+
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
       id = R.id.welcomeText;
       TextView welcomeText = ViewBindings.findChildViewById(rootView, id);
       if (welcomeText == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, welcomeText);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, activity, activityImgView,
+          activityImgView2, activityText, calories, caloriesImgView, caloriesValue, overall, sleep,
+          sleepTime, stepCovered, textView, textView2, welcomeText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

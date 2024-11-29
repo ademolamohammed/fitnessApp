@@ -4,9 +4,14 @@ package com.example.fitnessproject.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,12 +25,68 @@ public final class FragmentCaloriesBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView textNotifications;
+  public final Button button;
 
-  private FragmentCaloriesBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textNotifications) {
+  @NonNull
+  public final Button button2;
+
+  @NonNull
+  public final TextView cText;
+
+  @NonNull
+  public final TextView cText2;
+
+  @NonNull
+  public final ImageView calories;
+
+  @NonNull
+  public final CardView cardView2;
+
+  @NonNull
+  public final CardView cardViewCalories;
+
+  @NonNull
+  public final EditText editTextNumber;
+
+  @NonNull
+  public final EditText editTextNumber2;
+
+  @NonNull
+  public final ImageView fluid;
+
+  @NonNull
+  public final LinearLayout hiddenLinearLayout;
+
+  @NonNull
+  public final LinearLayout hiddenLinearLayout2;
+
+  @NonNull
+  public final TextView textView;
+
+  @NonNull
+  public final TextView textView2;
+
+  private FragmentCaloriesBinding(@NonNull ConstraintLayout rootView, @NonNull Button button,
+      @NonNull Button button2, @NonNull TextView cText, @NonNull TextView cText2,
+      @NonNull ImageView calories, @NonNull CardView cardView2, @NonNull CardView cardViewCalories,
+      @NonNull EditText editTextNumber, @NonNull EditText editTextNumber2, @NonNull ImageView fluid,
+      @NonNull LinearLayout hiddenLinearLayout, @NonNull LinearLayout hiddenLinearLayout2,
+      @NonNull TextView textView, @NonNull TextView textView2) {
     this.rootView = rootView;
-    this.textNotifications = textNotifications;
+    this.button = button;
+    this.button2 = button2;
+    this.cText = cText;
+    this.cText2 = cText2;
+    this.calories = calories;
+    this.cardView2 = cardView2;
+    this.cardViewCalories = cardViewCalories;
+    this.editTextNumber = editTextNumber;
+    this.editTextNumber2 = editTextNumber2;
+    this.fluid = fluid;
+    this.hiddenLinearLayout = hiddenLinearLayout;
+    this.hiddenLinearLayout2 = hiddenLinearLayout2;
+    this.textView = textView;
+    this.textView2 = textView2;
   }
 
   @Override
@@ -55,13 +116,93 @@ public final class FragmentCaloriesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.text_notifications;
-      TextView textNotifications = ViewBindings.findChildViewById(rootView, id);
-      if (textNotifications == null) {
+      id = R.id.button;
+      Button button = ViewBindings.findChildViewById(rootView, id);
+      if (button == null) {
         break missingId;
       }
 
-      return new FragmentCaloriesBinding((ConstraintLayout) rootView, textNotifications);
+      id = R.id.button2;
+      Button button2 = ViewBindings.findChildViewById(rootView, id);
+      if (button2 == null) {
+        break missingId;
+      }
+
+      id = R.id.cText;
+      TextView cText = ViewBindings.findChildViewById(rootView, id);
+      if (cText == null) {
+        break missingId;
+      }
+
+      id = R.id.cText2;
+      TextView cText2 = ViewBindings.findChildViewById(rootView, id);
+      if (cText2 == null) {
+        break missingId;
+      }
+
+      id = R.id.calories;
+      ImageView calories = ViewBindings.findChildViewById(rootView, id);
+      if (calories == null) {
+        break missingId;
+      }
+
+      id = R.id.cardView2;
+      CardView cardView2 = ViewBindings.findChildViewById(rootView, id);
+      if (cardView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.cardViewCalories;
+      CardView cardViewCalories = ViewBindings.findChildViewById(rootView, id);
+      if (cardViewCalories == null) {
+        break missingId;
+      }
+
+      id = R.id.editTextNumber;
+      EditText editTextNumber = ViewBindings.findChildViewById(rootView, id);
+      if (editTextNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.editTextNumber2;
+      EditText editTextNumber2 = ViewBindings.findChildViewById(rootView, id);
+      if (editTextNumber2 == null) {
+        break missingId;
+      }
+
+      id = R.id.fluid;
+      ImageView fluid = ViewBindings.findChildViewById(rootView, id);
+      if (fluid == null) {
+        break missingId;
+      }
+
+      id = R.id.hiddenLinearLayout;
+      LinearLayout hiddenLinearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (hiddenLinearLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.hiddenLinearLayout2;
+      LinearLayout hiddenLinearLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (hiddenLinearLayout2 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      return new FragmentCaloriesBinding((ConstraintLayout) rootView, button, button2, cText,
+          cText2, calories, cardView2, cardViewCalories, editTextNumber, editTextNumber2, fluid,
+          hiddenLinearLayout, hiddenLinearLayout2, textView, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
